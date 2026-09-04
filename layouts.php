@@ -5,7 +5,7 @@ require_once __DIR__ . '/includes/auth.php';
 $all = array_values(
     array_filter(
         files(),
-        fn($f) => ($f['category'] ?? '') === 'Templates'
+        fn($f) => ($f['category'] ?? '') === 'Layouts'
     )
 );
 
@@ -22,7 +22,7 @@ $subcategory = trim((string)($_GET['subcategory'] ?? ''));
 $tag = trim((string)($_GET['tag'] ?? ''));
 $cmsVersion = trim((string)($_GET['cms_version'] ?? ''));
 
-$subcategories = getSubcategories('Templates');
+$subcategories = getSubcategories('Layouts');
 
 $filtered = $all;
 

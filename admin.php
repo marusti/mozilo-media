@@ -178,42 +178,43 @@ if (!empty($target['last_activity'])) {
 
                 <div class="actions">
 
-                    <?php if (($target['role'] ?? 'user') === 'admin'): ?>
+    <?php if (($target['role'] ?? 'user') === 'admin'): ?>
 
-                        <?php if ($target['id'] !== $user['id']): ?>
+        <?php if ($target['id'] !== $user['id']): ?>
 
-                            <form method="post" class="confirm-form" data-confirm="<?= e(lang('remove_admin_confirm')) ?>">
-    <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
-    <input type="hidden" name="user_id" value="<?= e($target['id']) ?>">
-    <input type="hidden" name="action" value="remove_admin">
+            <form method="post" class="confirm-form" data-confirm="<?= e(lang('remove_admin_confirm')) ?>">
+                <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
+                <input type="hidden" name="user_id" value="<?= e($target['id']) ?>">
+                <input type="hidden" name="action" value="remove_admin">
 
-    <button class="button danger" type="submit">
-        <?= e(lang('remove_admin')) ?>
-    </button>
-</form>
+                <button class="button danger" type="submit">
+                    <?= e(lang('remove_admin')) ?>
+                </button>
+            </form>
 
-<?php else: ?>
+        <?php else: ?>
 
-<span class="badge">
-    <?= e(lang('you')) ?>
-</span>
+            <span class="badge">
+                <?= e(lang('you')) ?>
+            </span>
 
-<?php endif; ?>
+        <?php endif; ?>
 
-<?php else: ?>
+    <?php else: ?>
 
-<form method="post" action="delete.php" class="confirm-form" data-confirm="<?= e(lang('delete_file_confirm')) ?>">
-    <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
-    <input type="hidden" name="id" value="<?= e($file['id']) ?>">
+        <form method="post" class="confirm-form" data-confirm="<?= e(lang('make_admin_confirm')) ?>">
+            <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
+            <input type="hidden" name="user_id" value="<?= e($target['id']) ?>">
+            <input type="hidden" name="action" value="make_admin">
 
-    <button class="button danger" type="submit">
-        <?= e(lang('admin_delete_file')) ?>
-    </button>
-</form>
+            <button class="button" type="submit">
+                <?= e(lang('make_admin')) ?>
+            </button>
+        </form>
 
-                    <?php endif; ?>
+    <?php endif; ?>
 
-                </div>
+</div>
 
             </div>
 

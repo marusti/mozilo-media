@@ -5,10 +5,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 
-const APP_VERSION = '0.10.0-alpha';
+const APP_VERSION = '0.11.0-alpha';
 const DATA_DIR = __DIR__ . '/data';
 const UPLOAD_DIR = __DIR__ . '/uploads';
-const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
+const MAX_UPLOAD_BYTES = 30 * 1024 * 1024;
 const CMS_VERSIONS = [
     '2.0',
     '3.x',
